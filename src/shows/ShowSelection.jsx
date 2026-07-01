@@ -9,7 +9,11 @@ export default function ShowSelection({
   return (
     <nav className="shows">
       {shows.map((show) => (
-        <section key={show.name} onClick={() => setSelectedShow(show)}>
+        <section
+          className={"show" + (show === selectedShow ? " selected" : "")}
+          key={show.name}
+          onClick={() => setSelectedShow(show)}
+        >
           {show.name}
         </section>
       ))}
